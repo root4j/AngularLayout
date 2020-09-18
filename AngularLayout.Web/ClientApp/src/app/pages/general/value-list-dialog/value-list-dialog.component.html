@@ -1,0 +1,92 @@
+<form [formGroup]="mainForm" novalidate (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Value List</h1>
+    <div mat-dialog-content>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="List Code" formControlName="valueListCode">
+                    <mat-error *ngIf="mainForm.controls['valueListCode'].hasError('required')">
+                        <strong>List Code</strong> is a required field
+                    </mat-error>
+                    <mat-error *ngIf="mainForm.controls['valueListCode'].hasError('minlength')">
+                        The length of the <strong>List Code</strong> field cannot be less than the number of characters
+                        entered
+                    </mat-error>
+                    <mat-error *ngIf="mainForm.controls['valueListCode'].hasError('maxlength')">
+                        The length of the <strong>List Code</strong> cannot be greater than the number of characters
+                        entered
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="List Category" formControlName="valueListCategory">
+                    <mat-error *ngIf="mainForm.controls['valueListCategory'].hasError('required')">
+                        <strong>List Category</strong> is a required field
+                    </mat-error>
+                    <mat-error *ngIf="mainForm.controls['valueListCategory'].hasError('minlength')">
+                        The length of the <strong>List Category</strong> field cannot be less than the number of
+                        characters entered
+                    </mat-error>
+                    <mat-error *ngIf="mainForm.controls['valueListCategory'].hasError('maxlength')">
+                        The length of the <strong>List Category</strong> cannot be greater than the number of characters
+                        entered
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput type="number" placeholder="List Order" formControlName="listOrder">
+                    <mat-error *ngIf="mainForm.controls['listOrder'].hasError('required')">
+                        <strong>List Order</strong> is a required field
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Short Description" formControlName="shortDescription">
+                    <mat-error *ngIf="mainForm.controls['shortDescription'].hasError('required')">
+                        <strong>Short Description</strong> is a required field
+                    </mat-error>
+                    <mat-error *ngIf="mainForm.controls['shortDescription'].hasError('minlength')">
+                        The length of the <strong>Short Description</strong> field cannot be less than the number of
+                        characters entered
+                    </mat-error>
+                    <mat-error *ngIf="mainForm.controls['shortDescription'].hasError('maxlength')">
+                        The length of the <strong>Short Description</strong> cannot be greater than the number of
+                        characters entered
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="full-width">
+                    <input matInput placeholder="Long Description" formControlName="longDescription">
+                    <mat-error *ngIf="mainForm.controls['longDescription'].hasError('maxlength')">
+                        The length of the <strong>Long Description</strong> cannot be greater than the number of
+                        characters entered
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col" *ngIf="!create">
+                <mat-form-field class="full-width">
+                    <mat-select placeholder="Status" formControlName="rowStatus">
+                        <mat-option *ngFor="let status of statuses" [value]="status.value">
+                            {{ status.text }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="mainForm.controls['rowStatus'].hasError('required')">
+                        <strong>Status</strong> is a required field
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" *ngIf="mainForm.status === 'VALID'" type="submit">Save</button>
+        <button mat-raised-button color="warn" type="button" (click)="close()">Cancel</button>
+    </div>
+</form>

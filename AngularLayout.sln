@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularLayout.Logger", "AngularLayout.Logger\AngularLayout.Logger.csproj", "{D3EBB25F-19A4-41E0-BBAE-8F933B3E9F09}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularLayout.Model", "AngularLayout.Model\AngularLayout.Model.csproj", "{C8959B2F-FD2A-4896-B4A4-932AA5F75A15}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularLayout.Web", "AngularLayout.Web\AngularLayout.Web.csproj", "{24DB5495-C3C3-4B27-A459-55EFBBCF66F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3EBB25F-19A4-41E0-BBAE-8F933B3E9F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3EBB25F-19A4-41E0-BBAE-8F933B3E9F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3EBB25F-19A4-41E0-BBAE-8F933B3E9F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3EBB25F-19A4-41E0-BBAE-8F933B3E9F09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8959B2F-FD2A-4896-B4A4-932AA5F75A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8959B2F-FD2A-4896-B4A4-932AA5F75A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8959B2F-FD2A-4896-B4A4-932AA5F75A15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8959B2F-FD2A-4896-B4A4-932AA5F75A15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24DB5495-C3C3-4B27-A459-55EFBBCF66F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DB5495-C3C3-4B27-A459-55EFBBCF66F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DB5495-C3C3-4B27-A459-55EFBBCF66F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24DB5495-C3C3-4B27-A459-55EFBBCF66F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {717AD332-44AC-4E88-A07E-04EC6F60880A}
+	EndGlobalSection
+EndGlobal
