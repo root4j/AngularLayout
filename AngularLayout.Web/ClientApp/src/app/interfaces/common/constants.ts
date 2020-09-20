@@ -7,6 +7,8 @@ export interface SelectValue {
 };
 
 export class Constants {
+  public static APP_LANG_DEFAULT: string = 'es';
+
   public static API_ENDPOINT: string = '/';
 
   public static MESSAGE_ROW_CREATED = 'Record successfully created!';
@@ -25,26 +27,26 @@ export class Constants {
 
   public static NAV_ITEMS: Navigation[] = [
     {
-      displayName: 'Home', iconName: 'home', route: '', children: []
+      displayName: 'MENU_HOME', iconName: 'home', route: '', children: []
     },
     {
-      displayName: 'General',
+      displayName: 'MENU_GENERAL',
       iconName: 'settings',
       route: 'general',
       children: [
-        { displayName: 'Value List', iconName: 'list', route: 'general/value-list', children: [] },
+        { displayName: 'MENU_GENERAL_VALUE_LIST', iconName: 'list', route: 'general/value-list', children: [] },
       ]
     },
     {
-      displayName: 'Test Page',
+      displayName: 'MENU_TEST',
       iconName: 'science',
       route: 'test',
       children: [
-        { displayName: 'Dashboard', iconName: 'dashboard', route: 'test/dashboard', children: [] },
-        { displayName: 'Drag & Drop', iconName: 'drag_indicator', route: 'test/drag-drop', children: [] },
-        { displayName: 'Form', iconName: 'dynamic_form', route: 'test/form', children: [] },
-        { displayName: 'Table', iconName: 'table_view', route: 'test/table', children: [] },
-        { displayName: 'Tree', iconName: 'account_tree', route: 'test/tree', children: [] }
+        { displayName: 'MENU_TEST_DASHBOARD', iconName: 'dashboard', route: 'test/dashboard', children: [] },
+        { displayName: 'MENU_TEST_DRAG_DROP', iconName: 'drag_indicator', route: 'test/drag-drop', children: [] },
+        { displayName: 'MENU_TEST_FORM', iconName: 'dynamic_form', route: 'test/form', children: [] },
+        { displayName: 'MENU_TEST_TABLE', iconName: 'table_view', route: 'test/table', children: [] },
+        { displayName: 'MENU_TEST_TREE', iconName: 'account_tree', route: 'test/tree', children: [] }
       ]
     }
   ];

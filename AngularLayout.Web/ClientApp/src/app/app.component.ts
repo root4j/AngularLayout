@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Navigation } from './interfaces/common/navigation';
 import { Constants } from './interfaces/common/constants';
+import { TranslateService } from './services/common/translate.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { Constants } from './interfaces/common/constants';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular Layout App';
+  selected = Constants.APP_LANG_DEFAULT;
 
   navItems: Navigation[] = Constants.NAV_ITEMS;
 
@@ -21,5 +22,9 @@ export class AppComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(private breakpointObserver: BreakpointObserver, private translate: TranslateService) { }
+
+  onChange() {
+    this.translate.use(this.selected);
+  }
 }

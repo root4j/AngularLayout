@@ -13,16 +13,16 @@ namespace AngularLayout.Web.Areas.General.Controllers
     [ApiController]
     [Area(Constants.AREA_GENERAL)]
     [EnableCors(Constants.APP_POLICY)]
-    public class ValueListsController : ControllerBase
+    public class StatesController : ControllerBase
     {
-        private readonly IValueListBusiness _Business;
+        private readonly IStateBusiness _Business;
 
-        public ValueListsController(IValueListBusiness Business)
+        public StatesController(IStateBusiness Business)
         {
             _Business = Business;
         }
 
-        // GET: General/api/ValueLists
+        // GET: General/api/States
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -37,13 +37,13 @@ namespace AngularLayout.Web.Areas.General.Controllers
             }
         }
 
-        // GET: General/api/ValueLists/Gex-Sex
+        // GET: General/api/States/COL
         [HttpGet("{id}")]
         public IActionResult GetAll(string id)
         {
             try
             {
-                return Ok(_Business.GetAllByCategory(id));
+                return Ok(_Business.GetAllByCountryCode(id));
             }
             catch (Exception ex)
             {
@@ -52,9 +52,9 @@ namespace AngularLayout.Web.Areas.General.Controllers
             }
         }
 
-        // POST: General/api/ValueLists
+        // POST: General/api/States
         [HttpPost]
-        public IActionResult Post([FromBody] ValueList input)
+        public IActionResult Post([FromBody] State input)
         {
             try
             {
@@ -73,9 +73,9 @@ namespace AngularLayout.Web.Areas.General.Controllers
             }
         }
 
-        // PUT: General/api/ValueLists/Gen-Sex-Male
+        // PUT: General/api/States/COL-08001
         [HttpPut("{id}")]
-        public IActionResult Put(string id, [FromBody] ValueList input)
+        public IActionResult Put(string id, [FromBody] State input)
         {
             try
             {

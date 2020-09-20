@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AngularLayout.Model.Business.General
+namespace AngularLayout.Model.Business.General.Implementations
 {
     public class ValueListBusiness : IValueListBusiness
     {

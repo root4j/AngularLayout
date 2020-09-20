@@ -1,7 +1,7 @@
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { LayoutModule } from "@angular/cdk/layout";
 import { HttpClientModule } from "@angular/common/http";
-import { NgModule } from "@angular/core";
+import { NgModule, APP_INITIALIZER } from "@angular/core";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -42,17 +42,19 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { Constants } from "./interfaces/common/constants";
 import { MenuComponent } from "./layout/menu/menu.component";
 import { HomeComponent } from "./pages/common/home/home.component";
+import { ValueListDialogComponent } from "./pages/general/value-list-dialog/value-list-dialog.component";
+import { ValueListComponent } from "./pages/general/value-list/value-list.component";
 import { DashboardTestComponent } from "./pages/test/dashboard-test/dashboard-test.component";
 import { DragDropTestComponent } from "./pages/test/drag-drop-test/drag-drop-test.component";
 import { FormTestComponent } from "./pages/test/form-test/form-test.component";
 import { TableTestComponent } from "./pages/test/table-test/table-test.component";
 import { TreeTestComponent } from "./pages/test/tree-test/tree-test.component";
 import { NavigationService } from "./services/common/navigation.service";
-import { ValueListDialogComponent } from "./pages/general/value-list-dialog/value-list-dialog.component";
-import { ValueListComponent } from "./pages/general/value-list/value-list.component";
-
+import { TranslatePipe } from "./services/common/translate.pipe";
+import { TranslateService } from "./services/common/translate.service";
 
 @NgModule({
   declarations: [
@@ -63,6 +65,7 @@ import { ValueListComponent } from "./pages/general/value-list/value-list.compon
     DragDropTestComponent,
     FormTestComponent,
     TableTestComponent,
+    TranslatePipe,
     TreeTestComponent,
     ValueListComponent,
     ValueListDialogComponent
@@ -115,7 +118,20 @@ import { ValueListComponent } from "./pages/general/value-list/value-list.compon
   entryComponents: [
     ValueListDialogComponent
   ],
-  providers: [NavigationService],
+  providers: [
+    NavigationService,
+    TranslateService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: setupTranslateFactory,
+      deps: [ TranslateService ],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function setupTranslateFactory(service: TranslateService): Function {
+  return () => service.use(Constants.APP_LANG_DEFAULT);
+}
