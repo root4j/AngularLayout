@@ -4,7 +4,7 @@ namespace AngularLayout.Model.Common
 {
     public static class Constants
     {
-        public const string APP_POLICY = "SysOccrePolicy";
+        public const string APP_POLICY = "AngularAppPolicy";
 
         #region Application Areas Constants
         public const string AREA_GENERAL = "General";

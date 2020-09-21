@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SelectValue, Constants } from 'src/app/interfaces/common/constants';
 import { ValueList } from 'src/app/interfaces/general/value-list';
 import { SnackBarService } from 'src/app/services/common/snack-bar.service';
+import { TranslateService } from 'src/app/services/common/translate.service';
 import { ValueListService } from 'src/app/services/general/value-list.service';
 
 @Component({
@@ -32,6 +33,7 @@ export class ValueListDialogComponent {
    * Component constructor
    * @param fb FormBuilder class injection
    * @param _snk SnackBarService service injection
+   * @param _lang TranslateService service injection
    * @param mainService ValueListService service injection
    * @param dialogRef MatDialogRef class injection
    * @param data Data that is received as a parameter
@@ -39,6 +41,7 @@ export class ValueListDialogComponent {
   constructor(
     private fb: FormBuilder,
     private _snk: SnackBarService,
+    private _lang: TranslateService,
     private mainService: ValueListService,
     public dialogRef: MatDialogRef<ValueListDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -103,15 +106,15 @@ export class ValueListDialogComponent {
     this.mainService.add(obj)
       .subscribe((res: any) => {
         if (res !== undefined && res !== null && res.hasOwnProperty('ownHandle')) {
-          this._snk.show(res.message);
+          this._snk.show(this._lang.data[res.message]);
           console.error(res.object);
         } else {
           this.mainForm.reset();
-          this._snk.show(Constants.MESSAGE_ROW_CREATED);
+          this._snk.show(this._lang.data[Constants.MESSAGE_ROW_CREATED]);
           this.dialogRef.close();
         }
       }, err => {
-        this._snk.show(Constants.MESSAGE_ROW_ERROR);
+        this._snk.show(this._lang.data[Constants.MESSAGE_ROW_ERROR]);
         console.error(err);
       });
   }
@@ -125,15 +128,15 @@ export class ValueListDialogComponent {
     this.mainService.update(id, obj)
       .subscribe((res: any) => {
         if (res !== undefined && res !== null && res.hasOwnProperty('ownHandle')) {
-          this._snk.show(res.message);
+          this._snk.show(this._lang.data[res.message]);
           console.error(res.object);
         } else {
           this.mainForm.reset();
-          this._snk.show(Constants.MESSAGE_ROW_UPDATED);
+          this._snk.show(this._lang.data[Constants.MESSAGE_ROW_UPDATED]);
           this.dialogRef.close();
         }
       }, err => {
-        this._snk.show(Constants.MESSAGE_ROW_ERROR);
+        this._snk.show(this._lang.data[Constants.MESSAGE_ROW_ERROR]);
         console.error(err);
       });
   }

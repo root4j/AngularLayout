@@ -13,11 +13,11 @@ namespace AngularLayout.Web.Areas.General.Controllers
     [ApiController]
     [Area(Constants.AREA_GENERAL)]
     [EnableCors(Constants.APP_POLICY)]
-    public class ContriesController : ControllerBase
+    public class CountriesController : ControllerBase
     {
         private readonly ICountryBusiness _Business;
 
-        public ContriesController(ICountryBusiness Business)
+        public CountriesController(ICountryBusiness Business)
         {
             _Business = Business;
         }

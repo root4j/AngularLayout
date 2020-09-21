@@ -7,7 +7,7 @@ export interface SelectValue {
 };
 
 export class Constants {
-  public static APP_LANG_DEFAULT: string = 'es';
+  public static APP_LANG_DEFAULT: string = 'en';
 
   public static API_ENDPOINT: string = '/';
 
@@ -21,8 +21,8 @@ export class Constants {
   };
 
   public static ROW_STATUS: SelectValue[] = [
-      {value: 'A', text: 'Active'},
-      {value: 'I', text: 'Inactive'}
+      {value: 'A', text: 'COMMON_MESSAGE_STATUS_ACTIVE'},
+      {value: 'I', text: 'COMMON_MESSAGE_STATUS_INACTIVE'}
   ];
 
   public static NAV_ITEMS: Navigation[] = [
@@ -35,6 +35,9 @@ export class Constants {
       route: 'general',
       children: [
         { displayName: 'MENU_GENERAL_VALUE_LIST', iconName: 'list', route: 'general/value-list', children: [] },
+        { displayName: 'MENU_GENERAL_COUNTRY', iconName: 'language', route: 'general/country', children: [] },
+        { displayName: 'MENU_GENERAL_STATE', iconName: 'map', route: 'general/state', children: [] },
+        { displayName: 'MENU_GENERAL_CITY', iconName: 'place', route: 'general/city', children: [] },
       ]
     },
     {

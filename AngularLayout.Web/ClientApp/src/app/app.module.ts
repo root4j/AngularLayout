@@ -45,6 +45,12 @@ import { AppComponent } from "./app.component";
 import { Constants } from "./interfaces/common/constants";
 import { MenuComponent } from "./layout/menu/menu.component";
 import { HomeComponent } from "./pages/common/home/home.component";
+import { CityDialogComponent } from "./pages/general/city-dialog/city-dialog.component";
+import { CityComponent } from "./pages/general/city/city.component";
+import { CountryDialogComponent } from "./pages/general/country-dialog/country-dialog.component";
+import { CountryComponent } from "./pages/general/country/country.component";
+import { StateDialogComponent } from "./pages/general/state-dialog/state-dialog.component";
+import { StateComponent } from "./pages/general/state/state.component";
 import { ValueListDialogComponent } from "./pages/general/value-list-dialog/value-list-dialog.component";
 import { ValueListComponent } from "./pages/general/value-list/value-list.component";
 import { DashboardTestComponent } from "./pages/test/dashboard-test/dashboard-test.component";
@@ -68,7 +74,13 @@ import { TranslateService } from "./services/common/translate.service";
     TranslatePipe,
     TreeTestComponent,
     ValueListComponent,
-    ValueListDialogComponent
+    ValueListDialogComponent,
+    CountryComponent,
+    CountryDialogComponent,
+    StateComponent,
+    StateDialogComponent,
+    CityComponent,
+    CityDialogComponent
   ],
   imports: [
     AppRoutingModule,
@@ -116,7 +128,10 @@ import { TranslateService } from "./services/common/translate.service";
     ReactiveFormsModule
   ],
   entryComponents: [
-    ValueListDialogComponent
+    ValueListDialogComponent,
+    CountryDialogComponent,
+    StateDialogComponent,
+    CityDialogComponent
   ],
   providers: [
     NavigationService,
