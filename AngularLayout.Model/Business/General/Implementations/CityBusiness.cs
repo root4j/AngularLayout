@@ -81,7 +81,7 @@ namespace AngularLayout.Model.Business.General.Implementations
         {
             try
             {
-                return _context.Cities.OrderBy(x => x.CityCode).ToList();
+                return _context.Cities.Include(x => x.State).ThenInclude(x => x.Country).OrderBy(x => x.CityCode).ToList();
             }
             catch (Exception ex)
             {
@@ -94,7 +94,7 @@ namespace AngularLayout.Model.Business.General.Implementations
         {
             try
             {
-                return _context.Cities.Where(x => x.StateCode.Equals(stateCode)).OrderBy(x => x.CityCode).ToList();
+                return _context.Cities.Include(x => x.State).ThenInclude(x => x.Country).Where(x => x.StateCode.Equals(stateCode)).OrderBy(x => x.CityCode).ToList();
             }
             catch (Exception ex)
             {
