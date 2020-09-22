@@ -7,14 +7,14 @@ export interface SelectValue {
 };
 
 export class Constants {
-  public static APP_LANG_DEFAULT: string = 'en';
+  public static APP_LANG_DEFAULT: string = 'es';
 
   public static API_ENDPOINT: string = '/';
 
-  public static MESSAGE_ROW_CREATED = 'Record successfully created!';
-  public static MESSAGE_ROW_UPDATED = 'Record successfully updated!';
-  public static MESSAGE_ROW_DELETED = 'Record successfully deleted!';
-  public static MESSAGE_ROW_ERROR = 'A serious error occurred, please check the console!';
+  public static MESSAGE_ROW_CREATED = 'COMMON_MESSAGE_ROW_CREATED';
+  public static MESSAGE_ROW_UPDATED = 'COMMON_MESSAGE_ROW_UPDATED';
+  public static MESSAGE_ROW_DELETED = 'COMMON_MESSAGE_ROW_DELETED';
+  public static MESSAGE_ROW_ERROR = 'COMMON_MESSAGE_ROW_ERROR';
 
   public static HTTP_OPTIONS: any = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })

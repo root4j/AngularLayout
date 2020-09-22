@@ -84,7 +84,9 @@
         </div>
     </div>
     <div mat-dialog-actions>
-        <button mat-raised-button color="primary" *ngIf="mainForm.status === 'VALID'" type="submit">{{ 'COMMON_BUTTON_SAVE' | translate }}</button>
-        <button mat-raised-button color="warn" type="button" (click)="close()">{{ 'COMMON_BUTTON_CANCEL' | translate }}</button>
+        <button mat-raised-button color="primary" *ngIf="mainForm.status === 'VALID'"
+            type="submit">{{ 'COMMON_BUTTON_SAVE' | translate }}</button>
+        <button mat-raised-button color="warn" type="button"
+            (click)="close()">{{ 'COMMON_BUTTON_CANCEL' | translate }}</button>
     </div>
 </form>

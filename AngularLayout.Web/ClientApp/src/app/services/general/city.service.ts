@@ -6,7 +6,7 @@ import { Constants } from "src/app/interfaces/common/constants";
 import { City } from "src/app/interfaces/general/city";
 import { ResponseService } from "../common/response.service";
 
-const apiUrl = Constants.API_ENDPOINT + 'General/api/Countries';
+const apiUrl = Constants.API_ENDPOINT + 'General/api/Cities';
 const httpOptions = Constants.HTTP_OPTIONS;
 
 @Injectable({

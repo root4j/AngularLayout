@@ -53,7 +53,7 @@
     "GENERAL_CITY_TITLE": "City",
     "GENERAL_CITY_CITY_CODE": "City Code",
     "GENERAL_CITY_COUNTRY_CODE": "Country",
-    "GENERAL_CITY_STATE_CODE": "State Code",
+    "GENERAL_CITY_STATE_CODE": "State",
     "GENERAL_CITY_CITY_NAME": "City Name",
     "GENERAL_CITY_LATITUDE": "Latitude",
     "GENERAL_CITY_LONGITUDE": "Longitude"
