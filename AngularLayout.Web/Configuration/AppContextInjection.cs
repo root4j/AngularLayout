@@ -20,7 +20,7 @@ namespace AngularLayout.Web.Configuration
             catch (Exception ex)
             {
                 AppLogger.Error(ex.Message, ex);
-                throw ex;
+                throw;
             }
         }
     }

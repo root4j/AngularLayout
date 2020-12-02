@@ -150,5 +150,8 @@
       }
     }
   },
-  "defaultProject": "AngularLayout.Web"
+  "defaultProject": "AngularLayout.Web",
+  "cli": {
+    "analytics": "85a9d398-e6f9-48d1-8067-e82f6071ad6b"
+  }
 }
